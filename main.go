@@ -76,7 +76,7 @@ func main() {
 		log.Fatalf("❌ DB connection failed: %v", err)
 	}
 	defer db.Close()
-	log.Println("✅ Database connected successfully")
+	log.Println("Database connected successfully")
 
 	http.HandleFunc("/api/health", healthHandler)
 	http.HandleFunc("/api/services", servicesHandler)
@@ -88,6 +88,6 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
-	log.Printf("🚀 Starting server on :%s", port)
+	log.Printf("Starting server on :%s", port)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }

@@ -1,13 +1,13 @@
-# Этап сборки
+# сборка
 FROM golang:1.22-alpine AS builder
 WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
-# Статическая сборка для Alpine
+# сборка
 RUN CGO_ENABLED=0 GOOS=linux go build -o /app/server ./main.go
 
-# Этап запуска (минимальный образ)
+# запуск
 FROM alpine:3.19
 WORKDIR /root/
 COPY --from=builder /app/server .
