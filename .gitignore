@@ -1,0 +1,26 @@
+# Переменные окружения
+.env
+
+# Зависимости Go
+vendor/
+
+# Бинарные файлы
+*.exe
+*.out
+server
+ppractica
+
+# Дампы БД
+dump/
+backups/
+*.sql.backup
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ОС
+.DS_Store
+Thumbs.db
